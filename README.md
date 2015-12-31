@@ -1,1 +1,1 @@
-Child theme
+Child theme template
