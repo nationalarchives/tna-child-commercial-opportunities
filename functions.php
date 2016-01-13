@@ -36,9 +36,6 @@ add_action('admin_menu','remove_page_metaboxes');
 function education_resource_init () {
 	// remove
 }
-function my_add_excerpts_to_pages () {
-	// remove
-}
 function create_post_type () {
 	// remove
 }
