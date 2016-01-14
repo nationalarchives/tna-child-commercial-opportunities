@@ -66,3 +66,16 @@ function include_template_function () {
 function flexslider_shortcode () {
 	// remove
 }
+
+// Add funcition to change the permalinks
+function flush_rewrites() {
+	global $wp_rewrite;
+	$wp_rewrite->flush_rules();
+}
+​
+function rewrite_root() {
+	global $wp_rewrite;
+	$wp_rewrite->page_structure = $wp_rewrite->root . 'about/our-role/%pagename%/';
+}
+add_action('generate_rewrite_rules', 'rewrite_root');
+add_action('admin_init', 'flush_rewrites');
