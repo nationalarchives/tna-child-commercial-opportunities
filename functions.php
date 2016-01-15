@@ -2,7 +2,7 @@
 /* DEFINE SITE CONSTANTS
 THESE MUST NOT HAVE BEEN DEFINED IN THE PARENT THEME!!
 */
-define('SUB_SITE_ROOT_URL', '/about/our-role');
+define('SUB_SITE_ROOT_URL', '/about');
 
 
 /*
