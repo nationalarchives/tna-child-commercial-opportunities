@@ -2,7 +2,16 @@
 /* DEFINE SITE CONSTANTS
 THESE MUST NOT HAVE BEEN DEFINED IN THE PARENT THEME!!
 */
-define('SUB_SITE_ROOT_URL', '/about');
+
+function tnatheme_globals() {
+    global $tnatheme;
+    if (substr($_SERVER['REMOTE_ADDR'], 0, 3) === '10.') {
+        $tnatheme['subsitepath'] = '';
+    } else {
+        $tnatheme['subsitepath'] = '/about/commercial-opportunities';
+    }
+}
+
 
 
 /*
