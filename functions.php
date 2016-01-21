@@ -1,4 +1,18 @@
 <?php
+/* DEFINE SITE VARIABLES
+*/
+
+function tnatheme_globals() {
+    global $tnatheme;
+    if (substr($_SERVER['REMOTE_ADDR'], 0, 3) === '10.') {
+        $tnatheme['subsitepath'] = '';
+    } else {
+        $tnatheme['subsitepath'] = '/about/commercial-opportunities';
+    }
+}
+tnatheme_globals();
+
+
 /*
  *
  * ================================================================================================
@@ -34,9 +48,6 @@ add_action('admin_menu','remove_page_metaboxes');
 
 
 function education_resource_init () {
-	// remove
-}
-function my_add_excerpts_to_pages () {
 	// remove
 }
 function create_post_type () {
