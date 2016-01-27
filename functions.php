@@ -4,10 +4,16 @@
 
 function tnatheme_globals() {
     global $tnatheme;
+    $tnatheme['ischildsite'] = 1;
+    $tnatheme['childsitename'] = 'Commercial opportunities';
     if (substr($_SERVER['REMOTE_ADDR'], 0, 3) === '10.') {
         $tnatheme['subsitepath'] = '';
+        $tnatheme['subsitepatharr'] = array();
     } else {
         $tnatheme['subsitepath'] = '/about/commercial-opportunities';
+        $tnatheme['subsitepatharr'] = array(
+        	'About us' => '/about/'
+        	);
     }
 }
 tnatheme_globals();
