@@ -6,13 +6,14 @@ function tnatheme_globals() {
     global $tnatheme;
     $tnatheme['ischildsite'] = 1;
     $tnatheme['childsitename'] = 'Commercial opportunities';
-    if (isset($_SERVER['HTTP_X_NGINX_PROXY'])) {
+    $headers = apache_request_headers();
+    if ( isset($_SERVER['HTTP_X_NGINX_PROXY']) && isset($headers['X_HOST_TYPE']) && $headers['X_HOST_TYPE'] == 'public' ) {
         $tnatheme['subsitepath'] = '/about/commercial-opportunities';
         $tnatheme['subsitepatharr'] = array(
             'About us' => '/about/'
         );
     } elseif (substr($_SERVER['REMOTE_ADDR'], 0, 3) === '10.') {
-        $$tnatheme['subsitepath'] = '';
+        $tnatheme['subsitepath'] = '';
         $tnatheme['subsitepatharr'] = array();
     } else {
         $tnatheme['subsitepath'] = '/about/commercial-opportunities';
