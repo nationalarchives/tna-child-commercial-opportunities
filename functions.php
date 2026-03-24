@@ -7,7 +7,7 @@ function tnatheme_globals() {
     $tnatheme['ischildsite'] = 1;
     $tnatheme['childsitename'] = 'Commercial opportunities';
     $headers = apache_request_headers();
-    if ( isset($_SERVER['HTTP_X_NGINX_PROXY']) && isset($headers['X_HOST_TYPE']) && $headers['X_HOST_TYPE'] == 'public' ) {
+    if ( isset($_SERVER['HTTP_X_NGINX_PROXY']) && isset($headers['X-Host-type']) && $headers['X-Host-type'] == 'public' ) {
         $tnatheme['subsitepath'] = '/about/commercial-opportunities';
         $tnatheme['subsitepatharr'] = array(
             'About us' => '/about/'
